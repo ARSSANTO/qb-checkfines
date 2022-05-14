@@ -62,7 +62,7 @@ end)
 ```bash
 QBCore.Commands.Add('checkfine', 'Check Invoice', {help = 'checkfine'}, true, function(source)
     local Myself = QBCore.Functions.GetPlayer(source)
-    if Myself.PlayerData.job.name == 'police' or Myself.PlayerData.job.name == 'ambulance' or or Myself.PlayerData.job.name == 'mechanic' then
+    if Myself.PlayerData.job.name == 'police' or Myself.PlayerData.job.name == 'ambulance' or Myself.PlayerData.job.name == 'mechanic' then
         TriggerClientEvent('qb-billing:client:checkFines')
     else
         TriggerClientEvent('QBCore:Notify', source, 'You are not a Service Worker')
