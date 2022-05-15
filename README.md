@@ -60,9 +60,9 @@ end)
 ```
 - Command to check Invoices as police ems and mechanic can be slide after the call back
 ```bash
-QBCore.Commands.Add("checkfine", "Check Invoice", {}, false, function(source, _)
+QBCore.Commands.Add('checkfine', 'Check Invoice', {}, false, function(source, _)
 	local Player = QBCore.Functions.GetPlayer(source)
-	if Player.PlayerData.job.name == "police" or Player.PlayerData.job.name == "ems" or Player.PlayerData.job.name == "mechanic" then
+	if Player.PlayerData.job.name == 'police' or Player.PlayerData.job.name == 'ambulance' or Player.PlayerData.job.name == 'mechanic' then
 		TriggerClientEvent('qb-billing:client:checkFines',source)
 	else
         TriggerClientEvent('QBCore:Notify', source, 'You are not a Service Worker')
